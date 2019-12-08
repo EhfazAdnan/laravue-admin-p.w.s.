@@ -1,17 +1,7 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Admin Component</div>
-
-                    <div class="card-body">
-                        I'm an admin component.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <v-container>
+        <v-alert type="info">I'am Vuetify Alert Component</v-alert>
+    </v-container>
 </template>
 
 <script>
