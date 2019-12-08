@@ -1844,6 +1844,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -19474,11 +19487,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
+    "div",
     [
-      _c("v-alert", { attrs: { type: "info" } }, [
-        _vm._v("I'am Vuetify Alert Component")
-      ])
+      _c(
+        "v-container",
+        [
+          _c("v-alert", { attrs: { type: "info" } }, [
+            _vm._v("I'am Vuetify Alert Component")
+          ]),
+          _vm._v(" "),
+          _c("v-btn", { attrs: { link: "", to: "/foo" } }, [
+            _vm._v("Load Foo")
+          ]),
+          _vm._v(" "),
+          _c("v-btn", { attrs: { link: "", to: "/bar" } }, [
+            _vm._v("Load Bar")
+          ]),
+          _vm._v(" "),
+          _c("v-btn", { attrs: { link: "", to: "/user/adnan" } }, [
+            _vm._v("Load User")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-content", [_c("router-view")], 1)
     ],
     1
   )
@@ -72308,8 +72341,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 
 
+var foo = {
+  template: "<v-alert type='error'>I am Foo component</v-alert>"
+};
+var bar = {
+  template: "<v-alert type='error'>I am Bar component</v-alert>"
+};
+var user = {
+  template: "<v-alert type='info'>I am {{ $route.params.name }}</v-alert>"
+};
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var routes = [];
+var routes = [{
+  path: '/foo',
+  component: foo
+}, {
+  path: '/bar',
+  component: bar
+}, {
+  path: '/user/:name',
+  component: user
+}];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes
 }));
